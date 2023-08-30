@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+#root {
+  height: 100vh;
+}
+
 nav ul {
   list-style: none;
 }
@@ -23,13 +27,9 @@ nav ul li a {
   margin-top: 1em;
 }
 
-main {
-  display: grid;
-  place-items: center;
-}
-
 .card {
   text-align: center;
+  width: 550px;
   max-width: 90%;
   margin: 0 auto;
   padding: 2em;
@@ -41,7 +41,10 @@ main {
   text-align: left;
 }
 
-h1,
+h1 {
+  margin-bottom: 1em;
+}
+
 h3,
 p {
   margin-bottom: 2em;
