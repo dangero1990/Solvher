@@ -1,38 +1,60 @@
-.App {
+:root {
+  --input-width: 3rem;
+  --input-height: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
   text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h3,
+p {
+  margin-bottom: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+select,
+input,
+button {
+  margin-left: 3em;
+}
+
+select {
+  width: var(--input-width);
+  height: var(--input-height);
+}
+
+input {
+  width: var(--input-width);
+  height: var(--input-height);
+}
+
+button {
+  width: var(--input-width);
+  height: var(--input-height);
+}
+
+label {
+  margin-bottom: 2em;
 }
