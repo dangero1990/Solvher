@@ -43,7 +43,7 @@ function CountByWeight() {
           </select>
         </div>
         <div className='row'>
-          <label htmlFor='count'>2. Enter the weight of the partial role in KGs</label>
+          <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
           <input onChange={handleCount} type='text' name='count' ref={input} />
         </div>
         <div className='row'>
