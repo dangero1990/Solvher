@@ -44,7 +44,7 @@ function CountByWeight() {
         </div>
         <div className='row'>
           <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
-          <input onChange={handleCount} type='text' name='count' ref={input} />
+          <input onChange={handleCount} type='text' name='count' ref={input} pattern='\d*' />
         </div>
         <div className='row'>
           <label htmlFor='submit'>3. Click solve to get the number of labels</label>
