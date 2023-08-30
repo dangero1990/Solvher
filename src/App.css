@@ -9,10 +9,23 @@
   padding: 0;
 }
 
-body {
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.primary-nav {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+main {
   display: grid;
   place-items: center;
-  height: 100vh;
 }
 
 .card {
