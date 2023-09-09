@@ -1,5 +1,4 @@
 import './App.css';
-import CountByWeight from './components/CountByWeight';
 import MetricConversion from './components/MetricConversion';
 import CountWeight from './components/CountWeight';
 import Navbar from './components/Navbar';
