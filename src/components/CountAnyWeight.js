@@ -51,9 +51,9 @@ function CountAnyWeight() {
         <label htmlFor='name'>name</label>
         <input type='text' name='name' onChange={(e) => setFull({ ...full, name: e.target.value })} ref={refName} />
         <label htmlFor='gross'>gross</label>
-        <input type='text' name='gross' onChange={(e) => setFull({ ...full, gross: +e.target.value })} ref={refGross} />
+        <input type='text' name='gross' onChange={(e) => setFull({ ...full, gross: +e.target.value })} ref={refGross} inputMode='numeric' />
         <label htmlFor='tare'>count</label>
-        <input type='text' name='count' onChange={(e) => setFull({ ...full, count: +e.target.value })} ref={refCount} />
+        <input type='text' name='count' onChange={(e) => setFull({ ...full, count: +e.target.value })} ref={refCount} inputMode='numeric' />
         <label htmlFor='submit-full'>Submit full</label>
         <button type='submit' name='submit-full'>
           Submit
@@ -67,7 +67,7 @@ function CountAnyWeight() {
           ))}
         </select>
         <label htmlFor='part-gross'>Gross</label>
-        <input type='text' onChange={(e) => setPart({ ...part, gross: +e.target.value })} ref={partGross} />
+        <input type='text' onChange={(e) => setPart({ ...part, gross: +e.target.value })} ref={partGross} inputMode='numeric' />
       </form>
       <p>Count on roll</p>
       <p>{net}</p>
