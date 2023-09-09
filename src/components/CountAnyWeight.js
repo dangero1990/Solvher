@@ -69,7 +69,9 @@ function CountAnyWeight() {
         <label htmlFor='part-gross'>Gross</label>
         <input type='text' onChange={(e) => setPart({ ...part, gross: +e.target.value })} ref={partGross} inputMode='numeric' />
         <label htmlFor='submit-part'>Solve</label>
-        <button type='submit' name='submit-part'></button>
+        <button type='submit' name='submit-part'>
+          Submit
+        </button>
       </form>
       <p>Count on roll</p>
       <p>{net}</p>
