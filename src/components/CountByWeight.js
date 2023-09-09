@@ -32,26 +32,20 @@ function CountByWeight() {
     <Card title='Solve a Partial Label Roll'>
       <h3>Solve the quantity of a partial label roll with just the weight</h3>
       <form onSubmit={solve}>
-        <div className='row'>
-          <label htmlFor='select'>1. Select the specific kind of label you are counting</label>
-          <select onChange={handleSelect} name='select'>
-            {LabelData.map((label) => (
-              <option key={label.id} value={label.id}>
-                {label.id}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className='row'>
-          <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
-          <input onChange={handleCount} type='text' name='count' ref={input} inputmode='numeric' />
-        </div>
-        <div className='row'>
-          <label htmlFor='submit'>3. Click solve to get the number of labels</label>
-          <button type='submit' name='submit'>
-            Solve
-          </button>
-        </div>
+        <label htmlFor='select'>1. Select the specific kind of label you are counting</label>
+        <select onChange={handleSelect} name='select'>
+          {LabelData.map((label) => (
+            <option key={label.id} value={label.id}>
+              {label.id}
+            </option>
+          ))}
+        </select>
+        <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
+        <input onChange={handleCount} type='text' name='count' ref={input} inputmode='numeric' />
+        <label htmlFor='submit'>3. Click solve to get the number of labels</label>
+        <button type='submit' name='submit'>
+          Solve
+        </button>
         <p>Count on roll</p>
         <p>{weight}</p>
       </form>

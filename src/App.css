@@ -13,64 +13,92 @@
   height: 100vh;
 }
 
+nav {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+.secondary-nav {
+  display: none;
+}
+
 nav ul {
   list-style: none;
+  display: flex;
+  gap: 1em;
 }
 
 nav ul li a {
   text-decoration: none;
+  color: #000;
 }
 
-.primary-nav {
+.active {
+  font-weight: bold;
+}
+
+header {
   width: 90%;
   margin: 0 auto;
   margin-top: 1em;
+  position: relative;
+}
+
+header h1 {
+  display: inline;
+}
+
+#hamburger {
+  display: none;
 }
 
 .card {
-  text-align: center;
   width: 550px;
   max-width: 90%;
   margin: 0 auto;
   padding: 2em;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-}
-
-h1 {
-  margin-bottom: 1em;
-}
-
-h3,
-p {
-  margin-bottom: 2em;
-}
-
-select,
-input,
-button {
-  margin-left: 3em;
-}
-
-select {
-  width: var(--input-width);
-  height: var(--input-height);
-}
-
-input {
-  width: var(--input-width);
-  height: var(--input-height);
-}
-
-button {
-  width: var(--input-width);
-  height: var(--input-height);
+  text-align: center;
 }
 
 label {
-  margin-bottom: 2em;
+  display: block;
+}
+
+#advanced {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button,
+select {
+  padding: 0.5em 1em;
+}
+
+@media (width < 600px) {
+  #hamburger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  nav {
+    display: block;
+    margin: 0;
+  }
+
+  .primary-nav {
+    display: none;
+  }
+
+  .secondary-nav {
+    display: block;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
 }

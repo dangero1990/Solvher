@@ -1,13 +1,19 @@
 import './App.css';
 import CountByWeight from './components/CountByWeight';
+import MetricConversion from './components/MetricConversion';
+import CountWeight from './components/CountWeight';
 import Navbar from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Navbar />
       <main>
-        <CountByWeight />
+        <Routes>
+          <Route path='' element={<CountWeight />} />
+          <Route path='/metric-conversion' element={<MetricConversion />} />
+        </Routes>
       </main>
     </>
   );
