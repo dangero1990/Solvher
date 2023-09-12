@@ -40,6 +40,8 @@ function MetricConversion() {
         answer = parseFloat(input * 3.7854 * density).toFixed(3);
         setNet(answer.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
         break;
+      default:
+        break;
     }
   }
 
