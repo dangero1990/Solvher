@@ -5,24 +5,21 @@ import Card from '../shared/Card';
 function CountByWeight() {
   const [select, setSelect] = useState(LabelData[0]);
   const [weight, setWeight] = useState(0);
-  const count = useRef(0);
+  const [rolls, setRolls] = useState(1);
+  const [count, setCount] = useState(0);
   const input = useRef(null);
 
   const handleSelect = (e) => {
     LabelData.map((label) => (e.target.value === label.id ? setSelect(label) : null));
   };
 
-  const handleCount = (e) => {
-    const counted = +e.target.value;
-    count.current = counted;
-  };
-
   function solve(e) {
     e.preventDefault();
 
     const refCount = select.count;
-    const refWeight = select.weight;
-    const answer = Math.floor((refCount * count.current) / refWeight);
+    const refWeight = select.weight - select.tare;
+    const selectCount = count - select.tare * rolls;
+    const answer = Math.floor((refCount * selectCount) / refWeight);
 
     setWeight(answer.toLocaleString('en-US'));
     input.current.value = null;
@@ -41,8 +38,10 @@ function CountByWeight() {
           ))}
         </select>
         <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
-        <input onChange={handleCount} type='text' name='count' ref={input} inputmode='numeric' required />
-        <label htmlFor='submit'>3. Click solve to get the number of labels</label>
+        <input onChange={(e) => setCount(+e.target.value)} type='text' name='count' ref={input} inputMode='numeric' required />
+        <label htmlFor='num-of-rolls'>3. Number of rolls being counted</label>
+        <input type='text' name='num-of-rolls' onChange={(e) => setRolls(+e.target.value)} inputMode='numeric' placeholder={rolls} />
+        <label htmlFor='submit'>4. Click solve to get the number of labels</label>
         <button type='submit' name='submit'>
           Solve
         </button>
