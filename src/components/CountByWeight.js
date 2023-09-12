@@ -41,14 +41,14 @@ function CountByWeight() {
           ))}
         </select>
         <label htmlFor='count'>2. Enter the weight of the partial roll in KGs</label>
-        <input onChange={handleCount} type='text' name='count' ref={input} inputmode='numeric' />
+        <input onChange={handleCount} type='text' name='count' ref={input} inputmode='numeric' required />
         <label htmlFor='submit'>3. Click solve to get the number of labels</label>
         <button type='submit' name='submit'>
           Solve
         </button>
-        <p>Count on roll</p>
-        <p>{weight}</p>
       </form>
+      <p>Count on roll</p>
+      <p>{weight}</p>
     </Card>
   );
 }

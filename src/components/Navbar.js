@@ -17,29 +17,29 @@ function CustomLink({ to, children, ...props }) {
 }
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
 
   function handleClick() {
-    setIsOpen(!isOpen);
+    setIsClosed(!isClosed);
+  }
+
+  function handleSelect() {
+    setIsClosed(false);
   }
 
   return (
     <header>
       <h1>Solvher</h1>
       <FontAwesomeIcon icon={faBars} id='hamburger' onClick={handleClick} size='xl' />
-      <nav className='primary-nav'>
+      <nav className={isClosed ? 'open' : ''}>
         <ul>
-          <CustomLink to=''>Count by Weight</CustomLink>
-          <CustomLink to='/metric-conversion'>Metric Conversion</CustomLink>
+          <CustomLink to='' onClick={handleSelect}>
+            Count by Weight
+          </CustomLink>
+          <CustomLink to='/metric-conversion' onClick={handleSelect}>
+            Metric Conversion
+          </CustomLink>
         </ul>
-      </nav>
-      <nav className='secondary-nav'>
-        {isOpen && (
-          <ul>
-            <CustomLink to=''>Count by Weight</CustomLink>
-            <CustomLink to='/metric-conversion'>Metric Conversion</CustomLink>
-          </ul>
-        )}
       </nav>
     </header>
   );

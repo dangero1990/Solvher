@@ -18,10 +18,6 @@ nav {
   margin-left: 2em;
 }
 
-.secondary-nav {
-  display: none;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -40,8 +36,8 @@ nav ul li a {
 header {
   width: 90%;
   margin: 0 auto;
-  margin-top: 1em;
   position: relative;
+  margin-top: 1em;
 }
 
 header h1 {
@@ -68,11 +64,21 @@ label {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 button,
 select {
   padding: 0.5em 1em;
+}
+
+input {
+  padding: 0.5em 0;
+}
+
+i {
+  display: block;
+  margin-bottom: 0.5em;
 }
 
 @media (width < 600px) {
@@ -85,20 +91,23 @@ select {
   }
 
   nav {
+    visibility: hidden;
+    height: 0;
     display: block;
     margin: 0;
+    transition: height 1s ease;
   }
 
-  .primary-nav {
-    display: none;
-  }
-
-  .secondary-nav {
-    display: block;
+  .open {
+    visibility: visible;
+    height: auto;
   }
 
   nav ul {
     display: block;
     text-align: center;
+  }
+  nav ul li {
+    margin-top: 1em;
   }
 }

@@ -13,9 +13,10 @@ function CountWeight() {
     <section id='weight-section'>
       {!advanced && <CountByWeight />}
       {advanced && <CountAnyWeight />}
-      <button onClick={handleClick} id='advanced'>
-        {advanced ? 'Basic' : 'Advanced'}
-      </button>
+      <div id='advanced'>
+        {advanced ? <i>Need to go back to the basics?</i> : <i>Need to count something unique?</i>}
+        <button onClick={handleClick}>{advanced ? 'Basic' : 'Advanced'}</button>
+      </div>
     </section>
   );
 }
