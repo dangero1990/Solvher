@@ -55,6 +55,7 @@ function CountAnyWeight() {
         <p>5. Enter the weight of the partial unit.</p>
         <p>6. Click submit</p>
       </div>
+      <hr />
       <form onSubmit={submitFull}>
         <h3>Refernce unit</h3>
         <i>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
@@ -84,7 +85,7 @@ function CountAnyWeight() {
         </button>
       </form>
       <div className='results'>
-        <p>Count on roll</p>
+        <p>Count of item</p>
         <p>{net}</p>
       </div>
     </Card>
