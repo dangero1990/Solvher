@@ -1,16 +1,13 @@
 :root {
-  --input-width: 3rem;
-  --input-height: 1.5rem;
+  /*Colors */
+  --primary-color: #0c0124;
+  --card-color: #d9d9d9;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-#root {
-  height: 100vh;
 }
 
 nav {
@@ -27,6 +24,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #000;
+  color: inherit;
 }
 
 .active {
@@ -34,10 +32,15 @@ nav ul li a {
 }
 
 header {
-  width: 90%;
-  margin: 0 auto;
   position: relative;
-  margin-top: 1em;
+  padding: 1em 0;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 header h1 {
@@ -49,15 +52,30 @@ header h1 {
 }
 
 .card {
-  width: 550px;
+  width: 445px;
   max-width: 90%;
-  margin: 0 auto;
+  margin: 2em auto;
   padding: 2em;
+  background-color: var(--card-color);
+  border-radius: 16px;
+}
+
+.card form {
+  margin-top: 2em;
+}
+
+.instructions {
+  font-family: 'Karla';
+  font-weight: 500;
+  margin: 2em 0;
+}
+
+.instructions:first-child {
   text-align: center;
 }
 
-.card h1 {
-  margin-bottom: 1em;
+hr {
+  color: var(--primary-color);
 }
 
 label {
@@ -72,9 +90,33 @@ label {
   margin-top: 2em;
 }
 
-button,
+input,
 select {
   padding: 0.5em 1em;
+  width: 50%;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 1em;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.5em 1em;
+  margin-bottom: 2em;
+}
+
+.card button {
+  margin-top: 2em;
+}
+
+.results {
+  text-align: center;
+  font-weight: bold;
 }
 
 input {
@@ -92,7 +134,7 @@ i {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-50%, 50%);
+    transform: translate(-100%, 100%);
   }
 
   nav {

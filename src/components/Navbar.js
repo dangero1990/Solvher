@@ -29,18 +29,20 @@ function Navbar() {
 
   return (
     <header>
-      <h1>Solvher</h1>
-      <FontAwesomeIcon icon={faBars} id='hamburger' onClick={handleClick} size='xl' />
-      <nav className={isClosed ? 'open' : ''}>
-        <ul>
-          <CustomLink to='' onClick={handleSelect}>
-            Count by Weight
-          </CustomLink>
-          <CustomLink to='/metric-conversion' onClick={handleSelect}>
-            Metric Conversion
-          </CustomLink>
-        </ul>
-      </nav>
+      <div className='container'>
+        <h1>Solvher</h1>
+        <FontAwesomeIcon icon={faBars} id='hamburger' onClick={handleClick} size='xl' />
+        <nav className={isClosed ? 'open' : ''}>
+          <ul>
+            <CustomLink to='' onClick={handleSelect}>
+              Count by Weight
+            </CustomLink>
+            <CustomLink to='/metric-conversion' onClick={handleSelect}>
+              Metric Conversion
+            </CustomLink>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

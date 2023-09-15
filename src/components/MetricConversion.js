@@ -61,20 +61,20 @@ function MetricConversion() {
 
   return (
     <Card title='Metric Conversion'>
-      <h3>Convert a different unit into KGs</h3>
       <form onSubmit={solve}>
         <label htmlFor='input'>Weight of item</label>
         <input type='text' name='input' onChange={(e) => setInput(+e.target.value)} inputMode='numeric' ref={inputRef} required />
         <select onChange={handleSelect}>{units}</select>
         {isVolume && <label htmlFor='density'>Density</label>}
         {isVolume && <input type='text' name='density' onChange={(e) => setDensity(+e.target.value)} inputMode='numeric' ref={densityRef} required />}
-        <label htmlFor='solve'>Solve</label>
         <button type='submit' name='solve'>
           Submit
         </button>
       </form>
-      <h4>Answer</h4>
-      <p>{net} kg</p>
+      <div className='results'>
+        <p>Answer</p>
+        <p>{net} kg</p>
+      </div>
     </Card>
   );
 }
