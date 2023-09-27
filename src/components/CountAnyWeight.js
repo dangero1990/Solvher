@@ -62,9 +62,9 @@ function CountAnyWeight() {
         <label htmlFor='name'>Name</label>
         <input type='text' name='name' onChange={(e) => setFull({ ...full, name: e.target.value })} ref={refName} required />
         <label htmlFor='gross'>Weight</label>
-        <input type='text' name='gross' onChange={(e) => setFull({ ...full, gross: +e.target.value })} ref={refGross} inputMode='numeric' required />
+        <input type='number' name='gross' onChange={(e) => setFull({ ...full, gross: e.target.value })} ref={refGross} step='any' required />
         <label htmlFor='tare'>Count</label>
-        <input type='text' name='count' onChange={(e) => setFull({ ...full, count: +e.target.value })} ref={refCount} inputMode='numeric' required />
+        <input type='number' name='count' onChange={(e) => setFull({ ...full, count: e.target.value })} ref={refCount} step='any' required />
         <button type='submit' name='submit-full'>
           Submit
         </button>
@@ -79,7 +79,7 @@ function CountAnyWeight() {
           ))}
         </select>
         <label htmlFor='part-gross'>Weight</label>
-        <input type='text' onChange={(e) => setPart({ ...part, gross: +e.target.value })} ref={partGross} inputMode='numeric' required />
+        <input type='number' onChange={(e) => setPart({ ...part, gross: +e.target.value })} ref={partGross} step='any' required />
         <button type='submit' name='submit-part'>
           Submit
         </button>

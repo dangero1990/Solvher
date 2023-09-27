@@ -50,7 +50,7 @@ function CountByWeight() {
         <label htmlFor='count'>2. Weight of label(s)</label>
         <input onChange={(e) => setCount(+e.target.value)} type='text' name='count' ref={input} inputMode='numeric' required />
         <label htmlFor='num-of-rolls'>3. Number of rolls</label>
-        <input type='text' name='num-of-rolls' onChange={(e) => setRolls(+e.target.value)} inputMode='numeric' placeholder={rolls} ref={rollRef} />
+        <input type='number' name='num-of-rolls' onChange={(e) => setRolls(e.target.value)} step='any' placeholder={rolls} ref={rollRef} />
         <button type='submit' name='submit'>
           Submit
         </button>
