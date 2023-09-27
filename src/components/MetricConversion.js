@@ -71,10 +71,10 @@ function MetricConversion() {
       <hr />
       <form onSubmit={solve}>
         <label htmlFor='input'>Weight of item</label>
-        <input type='number' name='input' onChange={(e) => setInput(e.target.value)} step='any' pattern='[0-9]*' ref={inputRef} required />
+        <input type='number' name='input' onChange={(e) => setInput(e.target.value)} inputMode='decimal' step='any' pattern='[0-9]*' ref={inputRef} required />
         <select onChange={handleSelect}>{units}</select>
         {isVolume && <label htmlFor='density'>Density</label>}
-        {isVolume && <input type='text' name='density' onChange={(e) => setDensity(e.target.value)} step='any' pattern='[0-9]*' ref={densityRef} required />}
+        {isVolume && <input type='text' name='density' onChange={(e) => setDensity(e.target.value)} inputMode='decimal' step='any' pattern='[0-9]*' ref={densityRef} required />}
         <button type='submit' name='solve'>
           Submit
         </button>
