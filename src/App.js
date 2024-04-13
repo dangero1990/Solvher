@@ -1,6 +1,7 @@
 import './App.css';
 import MetricConversion from './components/MetricConversion';
 import CountWeight from './components/CountWeight';
+import Barcode from './components/Barcode';
 import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,10 @@ function App() {
           <Route
             path='/metric-conversion'
             element={<MetricConversion />}
+          />
+          <Route
+            path='/barcode'
+            element={<Barcode />}
           />
         </Routes>
       </main>

@@ -63,10 +63,12 @@ function MetricConversion() {
     <Card title='Metric Conversion'>
       <div className='instructions'>
         <p>Instructions</p>
-        <p>1. Enter the weight of the item you are wanting to convert.</p>
-        <p>2. Select the unit of current unit of weight that you are wanting to convert.</p>
-        <p>3. If the unit you are trying to convert is a unit of volume you must enter a density.</p>
-        <p>4. Click Submit</p>
+        <ol>
+          <li>Enter the weight of the item you are wanting to convert.</li>
+          <li>Select the unit of current unit of weight that you are wanting to convert.</li>
+          <li>If the unit you are trying to convert is a unit of volume you must enter a density.</li>
+          <li>Click Submit</li>
+        </ol>
       </div>
       <hr />
       <form onSubmit={solve}>

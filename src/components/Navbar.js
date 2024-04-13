@@ -55,6 +55,12 @@ function Navbar() {
             >
               Metric Conversion
             </CustomLink>
+            <CustomLink
+              to='/barcode'
+              onClick={handleSelect}
+            >
+              Barcode Generator
+            </CustomLink>
           </ul>
         </nav>
       </div>
