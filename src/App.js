@@ -10,8 +10,14 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path='' element={<CountWeight />} />
-          <Route path='/metric-conversion' element={<MetricConversion />} />
+          <Route
+            path=''
+            element={<CountWeight />}
+          />
+          <Route
+            path='/metric-conversion'
+            element={<MetricConversion />}
+          />
         </Routes>
       </main>
     </>

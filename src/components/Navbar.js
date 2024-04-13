@@ -9,7 +9,11 @@ function CustomLink({ to, children, ...props }) {
 
   return (
     <li>
-      <Link to={to} {...props} className={isActive ? 'active' : ''}>
+      <Link
+        to={to}
+        {...props}
+        className={isActive ? 'active' : ''}
+      >
         {children}
       </Link>
     </li>
@@ -31,13 +35,24 @@ function Navbar() {
     <header>
       <div className='container'>
         <h1>Solvher</h1>
-        <FontAwesomeIcon icon={faBars} id='hamburger' onClick={handleClick} size='xl' />
+        <FontAwesomeIcon
+          icon={faBars}
+          id='hamburger'
+          onClick={handleClick}
+          size='xl'
+        />
         <nav className={isClosed ? 'open' : ''}>
           <ul>
-            <CustomLink to='' onClick={handleSelect}>
+            <CustomLink
+              to=''
+              onClick={handleSelect}
+            >
               Count by Weight
             </CustomLink>
-            <CustomLink to='/metric-conversion' onClick={handleSelect}>
+            <CustomLink
+              to='/metric-conversion'
+              onClick={handleSelect}
+            >
               Metric Conversion
             </CustomLink>
           </ul>

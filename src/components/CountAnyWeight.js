@@ -48,24 +48,53 @@ function CountAnyWeight() {
     <Card title='Count unique item'>
       <div className='instructions'>
         <p>Instructions</p>
-        <p>1. Choose a name for the item you are counting.</p>
-        <p>2. Enter the weight of the material in kilograms.</p>
-        <p>3. Enter the amount being counted.</p>
-        <p>4. After creating a refernce unit you can select it from the drop down menu under the partial unit section.</p>
-        <p>5. Enter the weight of the partial unit.</p>
-        <p>6. Click submit</p>
+        <ol>
+          <li>Choose a name for the item you are counting.</li>
+          <li>Enter the weight of the material in kilograms.</li>
+          <li>Enter the amount being counted.</li>
+          <li>After creating a refernce unit you can select it from the drop down menu under the partial unit section.</li>
+          <li>Enter the weight of the partial unit.</li>
+          <li>Click submit</li>
+        </ol>
       </div>
       <hr />
       <form onSubmit={submitFull}>
         <h3>Refernce unit</h3>
         <i>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
         <label htmlFor='name'>Name</label>
-        <input type='text' name='name' onChange={(e) => setFull({ ...full, name: e.target.value })} ref={refName} required />
+        <input
+          type='text'
+          name='name'
+          onChange={(e) => setFull({ ...full, name: e.target.value })}
+          ref={refName}
+          required
+        />
         <label htmlFor='gross'>Weight</label>
-        <input type='number' name='gross' onChange={(e) => setFull({ ...full, gross: e.target.value })} ref={refGross} inputMode='decimal' step='any' pattern='[0-9]*' required />
+        <input
+          type='number'
+          name='gross'
+          onChange={(e) => setFull({ ...full, gross: e.target.value })}
+          ref={refGross}
+          inputMode='decimal'
+          step='any'
+          pattern='[0-9]*'
+          required
+        />
         <label htmlFor='tare'>Count</label>
-        <input type='number' name='count' onChange={(e) => setFull({ ...full, count: e.target.value })} ref={refCount} inputMode='decimal' step='any' pattern='[0-9]*' required />
-        <button type='submit' name='submit-full'>
+        <input
+          type='number'
+          name='count'
+          onChange={(e) => setFull({ ...full, count: e.target.value })}
+          ref={refCount}
+          inputMode='decimal'
+          step='any'
+          pattern='[0-9]*'
+          required
+        />
+        <button
+          type='submit'
+          name='submit-full'
+        >
           Submit
         </button>
       </form>
@@ -73,14 +102,28 @@ function CountAnyWeight() {
       <form onSubmit={solve}>
         <h3>Partial Unit</h3>
         <label htmlFor='rolls'>Select</label>
-        <select name='rolls' onChange={handleSelect}>
+        <select
+          name='rolls'
+          onChange={handleSelect}
+        >
           {store.map((label) => (
             <option key={label.name}>{label.name}</option>
           ))}
         </select>
         <label htmlFor='part-gross'>Weight</label>
-        <input type='number' onChange={(e) => setPart({ ...part, gross: e.target.value })} ref={partGross} inputMode='decimal' step='any' pattern='[0-9]*' required />
-        <button type='submit' name='submit-part'>
+        <input
+          type='number'
+          onChange={(e) => setPart({ ...part, gross: e.target.value })}
+          ref={partGross}
+          inputMode='decimal'
+          step='any'
+          pattern='[0-9]*'
+          required
+        />
+        <button
+          type='submit'
+          name='submit-part'
+        >
           Submit
         </button>
       </form>
