@@ -1,6 +1,7 @@
 import Card from '../shared/Card';
 import UnitData from '../lib/UnitData';
 import { useState, useEffect, useRef } from 'react';
+import CustomButton from '../shared/CustomButton';
 
 function MetricConversion() {
   const [unit, setUnit] = useState(UnitData[0]);
@@ -60,18 +61,14 @@ function MetricConversion() {
   }, [unit]);
 
   return (
-    <Card title='Metric Conversion'>
-      <div className='instructions'>
-        <p>Instructions</p>
-        <ol>
-          <li>Enter the weight of the item you are wanting to convert.</li>
-          <li>Select the unit of current unit of weight that you are wanting to convert.</li>
-          <li>If the unit you are trying to convert is a unit of volume you must enter a density.</li>
-          <li>Click Submit</li>
-        </ol>
-      </div>
-      <hr />
-      <form onSubmit={solve}>
+    <Card
+      title='Metric Conversion'
+      instructions={['Enter the weight of the item you are wanting to convert', 'Select the unit of current unit of weight that you are wanting to convert', 'If the unit you are trying to convert is a unit of volume you must enter a density', 'Click Submit']}
+    >
+      <form
+        className='grid mb-4'
+        onSubmit={solve}
+      >
         <label htmlFor='input'>Weight of item</label>
         <input
           type='number'
@@ -97,12 +94,11 @@ function MetricConversion() {
             required
           />
         )}
-        <button
+        <CustomButton
+          text='submit'
           type='submit'
           name='solve'
-        >
-          Submit
-        </button>
+        />
       </form>
       <div className='results'>
         <p>Answer</p>

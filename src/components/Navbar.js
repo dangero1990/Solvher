@@ -12,7 +12,7 @@ function CustomLink({ to, children, ...props }) {
       <Link
         to={to}
         {...props}
-        className={isActive ? 'active' : ''}
+        className={isActive ? 'font-bold text-active_yellow' : ''}
       >
         {children}
       </Link>
@@ -32,9 +32,9 @@ function Navbar() {
   }
 
   return (
-    <header>
-      <div className='container'>
-        <h1>Solvher</h1>
+    <header className='relative bg-primary_blue py-4 text-white'>
+      <div className='max-w-[90%] mx-auto my-auto'>
+        <h1 className='font-bold text-3xl'>Solvher</h1>
         <FontAwesomeIcon
           icon={faBars}
           id='hamburger'

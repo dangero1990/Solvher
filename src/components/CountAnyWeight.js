@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Card from '../shared/Card';
+import CustomButton from '../shared/CustomButton';
 
 function CountAnyWeight() {
   const [full, setFull] = useState({});
@@ -45,20 +46,14 @@ function CountAnyWeight() {
   }
 
   return (
-    <Card title='Count unique item'>
-      <div className='instructions'>
-        <p>Instructions</p>
-        <ol>
-          <li>Choose a name for the item you are counting.</li>
-          <li>Enter the weight of the material in kilograms.</li>
-          <li>Enter the amount being counted.</li>
-          <li>After creating a refernce unit you can select it from the drop down menu under the partial unit section.</li>
-          <li>Enter the weight of the partial unit.</li>
-          <li>Click submit</li>
-        </ol>
-      </div>
-      <hr />
-      <form onSubmit={submitFull}>
+    <Card
+      title='Count unique item'
+      instructions={['Choose a name for the item you are counting', 'Enter the weight of the material in kilograms', 'Enter the amount being counted', 'After creating a refernce unit you can select it from the drop down menu under the partial unit section', 'Enter the weight of the partial unit', 'Click submit']}
+    >
+      <form
+        className='grid mb-4'
+        onSubmit={submitFull}
+      >
         <h3>Refernce unit</h3>
         <i>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
         <label htmlFor='name'>Name</label>
@@ -91,15 +86,17 @@ function CountAnyWeight() {
           pattern='[0-9]*'
           required
         />
-        <button
+        <CustomButton
+          text='submit'
           type='submit'
           name='submit-full'
-        >
-          Submit
-        </button>
+        />
       </form>
-      <hr />
-      <form onSubmit={solve}>
+      <hr className='border-t-2 border-primary_blue' />
+      <form
+        className='grid mt-8 mb-4'
+        onSubmit={solve}
+      >
         <h3>Partial Unit</h3>
         <label htmlFor='rolls'>Select</label>
         <select
@@ -120,12 +117,11 @@ function CountAnyWeight() {
           pattern='[0-9]*'
           required
         />
-        <button
+        <CustomButton
+          text='submit'
           type='submit'
           name='submit-part'
-        >
-          Submit
-        </button>
+        />
       </form>
       <div className='results'>
         <p>Count of item</p>

@@ -1,13 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /*Colors */
   --primary-color: #0c0124;
   --card-color: #d9d9d9;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 nav {
@@ -19,76 +17,6 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1em;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  color: inherit;
-}
-
-.active {
-  font-weight: bold;
-}
-
-header {
-  position: relative;
-  padding: 1em 0;
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.container {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-header h1 {
-  display: inline;
-}
-
-#hamburger {
-  display: none;
-}
-
-.card {
-  width: 445px;
-  max-width: 90%;
-  margin: 2em auto;
-  padding: 2em;
-  background-color: var(--card-color);
-  border-radius: 16px;
-}
-
-.title {
-  margin-bottom: 1em;
-}
-
-.card form {
-  margin-top: 2em;
-  display: grid;
-}
-
-.instructions {
-  font-family: 'Karla';
-  font-weight: 500;
-  margin: 2em 0;
-}
-
-.instructions p {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-}
-
-.instructions ol {
-  margin-left: 1em;
-}
-
-hr {
-  color: var(--primary-color);
-  margin-bottom: 2em;
 }
 
 #advanced {
@@ -106,7 +34,6 @@ select {
   text-align: center;
   border-radius: 16px;
   margin-bottom: 1em;
-  appearance: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -119,28 +46,22 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-button {
+/* button {
   background-color: var(--primary-color);
   color: #fff;
   display: block;
   margin: 0 auto;
-  text-transform: uppercase;
   border: none;
   padding: 0.5em 1em;
   margin-bottom: 2em;
   font-weight: bold;
 }
 
-#barcode_clear {
-  display: inline;
-  margin-left: 1em;
-}
-
 .card button {
   margin-top: 1em;
   border-radius: 16px;
   padding: 0.5em 2em;
-}
+} */
 
 .results {
   text-align: center;

@@ -1,12 +1,21 @@
-function Card({ title, children, ...props }) {
+function Card({ title, children, instructions, ...props }) {
   return (
-    <div
+    <section
       {...props}
-      className='card'
+      className='card w-[445px] max-w-[90%] my-8 mx-auto p-12 bg-card_color rounded-2xl'
     >
-      <h2 className='title'>{title}</h2>
+      <h2 className='font-bold text-xl mb-4'>{title}</h2>
+      <article className='mb-4'>
+        <h3 className='mb-4'>Instructions</h3>
+        <ol className='list-decimal'>
+          {instructions.map((instruction) => (
+            <li>{instruction}</li>
+          ))}
+        </ol>
+      </article>
+      <hr className='border-t-2 border-primary_blue mb-8' />
       {children}
-    </div>
+    </section>
   );
 }
 
