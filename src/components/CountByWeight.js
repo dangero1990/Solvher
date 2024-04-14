@@ -43,7 +43,7 @@ function CountByWeight() {
             <select
               onChange={handleSelect}
               name='select'
-              className='block'
+              className='input-style'
             >
               {LabelData.map((label) => (
                 <option
@@ -65,7 +65,7 @@ function CountByWeight() {
               value={partial.weight === null ? '' : partial.weight}
               step='any'
               pattern='[0-9]*'
-              className='block'
+              className='input-style'
               required
             />
           </li>
@@ -79,7 +79,7 @@ function CountByWeight() {
               step='any'
               pattern='[0-9]*'
               value={partial.rolls}
-              className='block'
+              className='input-style'
             />
           </li>
         </ol>
@@ -92,7 +92,7 @@ function CountByWeight() {
         </CustomButton>
       </form>
       <div
-        className='results'
+        className='text-center font-bold text-xl'
         ref={resultRef}
       >
         <p className='text-primary_color'>Count on roll</p>

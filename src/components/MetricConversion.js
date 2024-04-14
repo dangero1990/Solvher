@@ -78,9 +78,14 @@ function MetricConversion() {
           step='any'
           pattern='[0-9]*'
           ref={inputRef}
-          required
+          className='input-style'
         />
-        <select onChange={handleSelect}>{units}</select>
+        <select
+          onChange={handleSelect}
+          className='input-style'
+        >
+          {units}
+        </select>
         {isVolume && <label htmlFor='density'>Density</label>}
         {isVolume && (
           <input
@@ -91,6 +96,7 @@ function MetricConversion() {
             step='any'
             pattern='[0-9]*'
             ref={densityRef}
+            className='input-style'
             required
           />
         )}
@@ -100,7 +106,7 @@ function MetricConversion() {
           name='solve'
         />
       </form>
-      <div className='results'>
+      <div className='text-center font-bold text-xl'>
         <p>Answer</p>
         <p>{net} kg</p>
       </div>

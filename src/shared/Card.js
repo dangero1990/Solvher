@@ -8,8 +8,8 @@ function Card({ title, children, instructions, ...props }) {
       <article className='mb-4'>
         <h3 className='mb-4'>Instructions</h3>
         <ol className='list-decimal'>
-          {instructions.map((instruction) => (
-            <li>{instruction}</li>
+          {instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
           ))}
         </ol>
       </article>

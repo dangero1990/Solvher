@@ -55,11 +55,12 @@ function CountAnyWeight() {
         onSubmit={submitFull}
       >
         <h3>Refernce unit</h3>
-        <i>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
+        <i className='mb-4'>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
         <label htmlFor='name'>Name</label>
         <input
           type='text'
           name='name'
+          className='input-style'
           onChange={(e) => setFull({ ...full, name: e.target.value })}
           ref={refName}
           required
@@ -68,6 +69,7 @@ function CountAnyWeight() {
         <input
           type='number'
           name='gross'
+          className='input-style'
           onChange={(e) => setFull({ ...full, gross: e.target.value })}
           ref={refGross}
           inputMode='decimal'
@@ -79,6 +81,7 @@ function CountAnyWeight() {
         <input
           type='number'
           name='count'
+          className='input-style'
           onChange={(e) => setFull({ ...full, count: e.target.value })}
           ref={refCount}
           inputMode='decimal'
@@ -102,6 +105,7 @@ function CountAnyWeight() {
         <select
           name='rolls'
           onChange={handleSelect}
+          className='input-style'
         >
           {store.map((label) => (
             <option key={label.name}>{label.name}</option>
@@ -110,6 +114,7 @@ function CountAnyWeight() {
         <label htmlFor='part-gross'>Weight</label>
         <input
           type='number'
+          className='input-style'
           onChange={(e) => setPart({ ...part, gross: e.target.value })}
           ref={partGross}
           inputMode='decimal'
@@ -123,7 +128,7 @@ function CountAnyWeight() {
           name='submit-part'
         />
       </form>
-      <div className='results'>
+      <div className='text-center font-bold text-xl'>
         <p>Count of item</p>
         <p>{net}</p>
       </div>

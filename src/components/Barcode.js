@@ -15,7 +15,10 @@ export default function Barcode() {
       title='Barcode Generator'
       instructions={["Type in the name of the barcode you'd like to scan into the text field below. Click clear to clear the input field"]}
     >
-      <svg id='barcode'></svg>
+      <svg
+        id='barcode'
+        className='block ml-auto mr-auto mb-4'
+      ></svg>
       <ol className='list-decimal'>
         <li>Enter barcode name here</li>
       </ol>
@@ -23,7 +26,7 @@ export default function Barcode() {
         type='text'
         onChange={(e) => setBarcodeText(e.target.value.toUpperCase())}
         value={barcodeText}
-        className='mr-4'
+        className='input-style'
       />
       <CustomButton
         text='Clear'

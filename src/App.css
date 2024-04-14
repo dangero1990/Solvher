@@ -2,21 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-#advanced {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  margin-top: 2em;
-}
-
-input,
-select {
-  padding: 0.5em 1em;
-  width: 50%;
-  text-align: center;
-  border-radius: 16px;
-  margin-bottom: 1em;
+@layer components {
+  .input-style {
+    @apply block py-2 px-4 w-1/2 text-center rounded-xl mb-4;
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -27,20 +16,4 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
-}
-
-.results {
-  text-align: center;
-  font-weight: bold;
-}
-
-i {
-  margin-bottom: 1em;
-}
-
-.card svg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em;
 }
