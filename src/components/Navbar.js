@@ -1,7 +1,9 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
+import clsx from 'clsx';
 
 function CustomLink({ to, children, ...props }) {
   const resolvePath = useResolvedPath(to);
@@ -22,42 +24,44 @@ function CustomLink({ to, children, ...props }) {
 
 function Navbar() {
   const [isClosed, setIsClosed] = useState(false);
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
-  function handleClick() {
-    setIsClosed(!isClosed);
-  }
-
-  function handleSelect() {
-    setIsClosed(false);
-  }
+  useEffect(() => {
+    if (isSmallScreen) {
+      setIsClosed(true);
+    } else {
+      setIsClosed(false);
+    }
+  }, [isSmallScreen]);
 
   return (
-    <header className='relative bg-primary_blue py-4 text-white'>
+    <header className='bg-primary_blue py-4 text-white'>
       <div className='max-w-[90%] mx-auto my-auto'>
-        <h1 className='font-bold text-3xl'>Solvher</h1>
+        <h1 className='relative font-bold text-3xl inline'>Solvher</h1>
         <FontAwesomeIcon
           icon={faBars}
           id='hamburger'
-          onClick={handleClick}
+          className='md:hidden block absolute right-8 top-0 translate-y-[100%]'
+          onClick={() => setIsClosed(!isClosed)}
           size='xl'
         />
-        <nav className={isClosed ? 'open' : ''}>
-          <ul>
+        <nav className={clsx('md:inline-block md:ml-8 mt-4 block md:visible', { 'invisible h-0': isClosed })}>
+          <ul className='flex flex-col md:flex-row gap-4 text-center'>
             <CustomLink
               to=''
-              onClick={handleSelect}
+              onClick={() => setIsClosed(!isClosed)}
             >
               Count by Weight
             </CustomLink>
             <CustomLink
               to='/metric-conversion'
-              onClick={handleSelect}
+              onClick={() => setIsClosed(!isClosed)}
             >
               Metric Conversion
             </CustomLink>
             <CustomLink
               to='/barcode'
-              onClick={handleSelect}
+              onClick={() => setIsClosed(!isClosed)}
             >
               Barcode Generator
             </CustomLink>

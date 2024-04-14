@@ -78,7 +78,6 @@ function CountByWeight() {
               inputMode='decimal'
               step='any'
               pattern='[0-9]*'
-              placeholder={partial.rolls}
               value={partial.rolls}
               className='block'
             />

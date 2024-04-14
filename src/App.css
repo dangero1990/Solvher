@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /*Colors */
-  --primary-color: #0c0124;
-  --card-color: #d9d9d9;
-}
-
-nav {
-  display: inline-block;
-  margin-left: 2em;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1em;
-}
-
 #advanced {
   position: absolute;
   left: 50%;
@@ -46,23 +29,6 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-/* button {
-  background-color: var(--primary-color);
-  color: #fff;
-  display: block;
-  margin: 0 auto;
-  border: none;
-  padding: 0.5em 1em;
-  margin-bottom: 2em;
-  font-weight: bold;
-}
-
-.card button {
-  margin-top: 1em;
-  border-radius: 16px;
-  padding: 0.5em 2em;
-} */
-
 .results {
   text-align: center;
   font-weight: bold;
@@ -77,35 +43,4 @@ i {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-}
-
-@media (width < 600px) {
-  #hamburger {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 100%);
-  }
-
-  nav {
-    visibility: hidden;
-    height: 0;
-    display: block;
-    margin: 0;
-    transition: height 1s ease;
-  }
-
-  .open {
-    visibility: visible;
-    height: auto;
-  }
-
-  nav ul {
-    display: block;
-    text-align: center;
-  }
-  nav ul li {
-    margin-top: 1em;
-  }
 }
