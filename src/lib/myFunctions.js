@@ -1,6 +1,6 @@
-export function getCount(refCount, partialWeight, refWeight, tare, rolls) {
+export function getCount(refCount, partialWeight, refWeight, tare = 0, rolls = 1) {
   const actualPartialWeight = partialWeight - tare * rolls;
   const answer = (refCount * actualPartialWeight) / refWeight;
 
-  return Math.floor(answer).toLocaleString('en-US');
+  return Math.round(answer).toLocaleString('en-US');
 }

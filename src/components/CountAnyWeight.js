@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import Card from '../shared/Card';
 import CustomButton from '../shared/CustomButton';
+import { getCount } from '../lib/myFunctions';
 
 function CountAnyWeight() {
   const [full, setFull] = useState({});
@@ -40,9 +41,8 @@ function CountAnyWeight() {
     e.preventDefault();
 
     partGross.current.value = null;
-    const answer = Math.floor((full.count * part.gross) / full.gross);
 
-    setNet(answer.toLocaleString('en-US'));
+    setNet(getCount(full.count, part.gross, full.gross));
   }
 
   return (
