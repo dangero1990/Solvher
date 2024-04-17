@@ -3,17 +3,17 @@ import Card from '../shared/Card';
 import CustomButton from '../shared/CustomButton';
 import { getCount } from '../lib/myFunctions';
 
-const initialValues = {
+const initialFull = {
   name: '',
-  gross: 0,
-  count: 0,
+  gross: '',
+  count: '',
 };
 
 function CountAnyWeight() {
-  const [full, setFull] = useState(initialValues);
+  const [full, setFull] = useState(initialFull);
   const [select, setSelect] = useState({});
   const [store, setStore] = useState([]);
-  const [part, setPart] = useState(0);
+  const [part, setPart] = useState('');
   const net = useRef(0);
 
   function submitFull(e) {
@@ -23,11 +23,11 @@ function CountAnyWeight() {
       const newStore = store.filter((label) => label.name !== full.name);
 
       setStore(...newStore, [full]);
-      setFull(initialValues);
+      setFull(initialFull);
       setSelect(full);
     } else {
       setStore([...store, full]);
-      setFull(initialValues);
+      setFull(initialFull);
       setSelect(full);
     }
   }
@@ -39,8 +39,8 @@ function CountAnyWeight() {
   function solve(e) {
     e.preventDefault();
 
+    setPart('');
     net.current = getCount(select.count, part, select.gross);
-    setPart(0);
   }
 
   return (

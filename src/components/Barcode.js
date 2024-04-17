@@ -13,7 +13,7 @@ export default function Barcode() {
   return (
     <Card
       title='Barcode Generator'
-      instructions={["Type in the name of the barcode you'd like to scan into the text field below. Click clear to clear the input field", "You may need to boost your phone's brightness, and turn your phone sideways"]}
+      instructions={["Type in the name of the barcode you'd like to scan into the text field below. Click clear to clear the input field", "You may need to boost your phone's brightness and turn your phone sideways"]}
     >
       <svg
         id='barcode'
