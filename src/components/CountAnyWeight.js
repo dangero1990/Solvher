@@ -15,6 +15,7 @@ function CountAnyWeight() {
   const [store, setStore] = useState([]);
   const [part, setPart] = useState('');
   const net = useRef(0);
+  const netRef = useRef(null);
 
   function submitFull(e) {
     e.preventDefault();
@@ -41,6 +42,7 @@ function CountAnyWeight() {
 
     setPart('');
     net.current = getCount(select.count, part, select.gross);
+    netRef.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   return (
@@ -129,7 +131,7 @@ function CountAnyWeight() {
       </form>
       <div className='text-center font-bold text-xl'>
         <p>Count of item</p>
-        <p>{net.current}</p>
+        <p ref={netRef}>{net.current}</p>
       </div>
     </Card>
   );
