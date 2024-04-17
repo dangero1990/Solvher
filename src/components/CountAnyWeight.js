@@ -16,6 +16,7 @@ function CountAnyWeight() {
   const [part, setPart] = useState('');
   const net = useRef(0);
   const netRef = useRef(null);
+  const partRef = useRef(null);
 
   function submitFull(e) {
     e.preventDefault();
@@ -26,10 +27,16 @@ function CountAnyWeight() {
       setStore(...newStore, [full]);
       setFull(initialFull);
       setSelect(full);
+      setTimeout(() => {
+        partRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     } else {
       setStore([...store, full]);
       setFull(initialFull);
       setSelect(full);
+      setTimeout(() => {
+        partRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
   }
 
@@ -42,7 +49,9 @@ function CountAnyWeight() {
 
     setPart('');
     net.current = getCount(select.count, part, select.gross);
-    netRef.current.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      netRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
 
   return (
@@ -100,7 +109,7 @@ function CountAnyWeight() {
         className='grid mt-8 mb-4'
         onSubmit={solve}
       >
-        <h3>Partial Unit</h3>
+        <h3 ref={partRef}>Partial Unit</h3>
         <label htmlFor='rolls'>Select</label>
         <select
           name='rolls'

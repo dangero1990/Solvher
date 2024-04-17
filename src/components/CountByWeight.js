@@ -25,7 +25,9 @@ function CountByWeight() {
     answer.current = getCount(select.count, partial.weight, select.weight, select.tare, partial.rolls);
     setPartial(initialValues);
 
-    resultRef.current.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
 
   return (
