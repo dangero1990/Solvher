@@ -24,7 +24,18 @@ function CustomLink({ to, children, ...props }) {
 
 function Navbar() {
   const [isClosed, setIsClosed] = useState(false);
+  const [isInitialRender, setIsInitialRender] = useState(true);
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsInitialRender(false);
+    };
+    window.addEventListener('load', handleLoad);
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
 
   useEffect(() => {
     if (isSmallScreen) {
@@ -33,6 +44,12 @@ function Navbar() {
       setIsClosed(false);
     }
   }, [isSmallScreen]);
+
+  function handleClick() {
+    if (isSmallScreen) {
+      setIsClosed(true);
+    }
+  }
 
   return (
     <header className='bg-primary_blue py-4 text-white'>
@@ -45,23 +62,23 @@ function Navbar() {
           onClick={() => setIsClosed(!isClosed)}
           size='xl'
         />
-        <nav className={clsx('md:inline-block md:ml-8 mt-4 block md:visible', { 'invisible h-0': isClosed })}>
+        <nav className={clsx('md:inline-block md:ml-8 mt-4 block md:visible ', { 'overflow-hidden transition-all duration-300 ease': !isInitialRender, 'invisible max-h-0': isClosed, 'max-h-96': !isClosed })}>
           <ul className='flex flex-col md:flex-row gap-4 text-center'>
             <CustomLink
               to=''
-              onClick={() => setIsClosed(!isClosed)}
+              onClick={handleClick}
             >
               Count by Weight
             </CustomLink>
             <CustomLink
               to='/metric-conversion'
-              onClick={() => setIsClosed(!isClosed)}
+              onClick={handleClick}
             >
               Metric Conversion
             </CustomLink>
             <CustomLink
               to='/barcode'
-              onClick={() => setIsClosed(!isClosed)}
+              onClick={handleClick}
             >
               Barcode Generator
             </CustomLink>

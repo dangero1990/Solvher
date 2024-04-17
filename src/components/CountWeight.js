@@ -4,15 +4,20 @@ import { useState, useRef, useEffect } from 'react';
 
 function CountWeight() {
   const [advanced, setAdvanced] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
   const sectionRef = useRef(null);
 
   function handleClick() {
     setAdvanced(!advanced);
+    setButtonClicked(true);
   }
 
   useEffect(() => {
-    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-  }, [advanced]);
+    if (buttonClicked) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      setButtonClicked(false);
+    }
+  }, [buttonClicked]);
 
   return (
     <section ref={sectionRef}>
