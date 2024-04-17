@@ -3,14 +3,17 @@ import Card from '../shared/Card';
 import CustomButton from '../shared/CustomButton';
 import { getCount } from '../lib/myFunctions';
 
+const initialValues = {
+  name: '',
+  gross: 0,
+  count: 0,
+};
+
 function CountAnyWeight() {
-  const [full, setFull] = useState({});
+  const [full, setFull] = useState(initialValues);
   const [store, setStore] = useState([]);
   const [part, setPart] = useState({});
   const [net, setNet] = useState(0);
-  const refName = useRef(null);
-  const refGross = useRef(null);
-  const refCount = useRef(null);
   const partGross = useRef(null);
 
   function submitFull(e) {
@@ -20,16 +23,10 @@ function CountAnyWeight() {
       const newStore = store.filter((label) => label.name !== full.name);
 
       setStore(...newStore, [full]);
-      setNet(0);
-      refName.current.value = null;
-      refGross.current.value = null;
-      refCount.current.value = null;
+      setFull(initialValues);
     } else {
       setStore([...store, full]);
-      setNet(0);
-      refName.current.value = null;
-      refGross.current.value = null;
-      refCount.current.value = null;
+      setFull(initialValues);
     }
   }
 
@@ -62,7 +59,7 @@ function CountAnyWeight() {
           name='name'
           className='input-style'
           onChange={(e) => setFull({ ...full, name: e.target.value })}
-          ref={refName}
+          value={full.name}
           required
         />
         <label htmlFor='gross'>Weight</label>
@@ -70,11 +67,11 @@ function CountAnyWeight() {
           type='number'
           name='gross'
           className='input-style'
-          onChange={(e) => setFull({ ...full, gross: e.target.value })}
-          ref={refGross}
+          onChange={(e) => setFull({ ...full, gross: parseFloat(e.target.value) })}
           inputMode='decimal'
           step='any'
           pattern='[0-9]*'
+          value={full.gross}
           required
         />
         <label htmlFor='tare'>Count</label>
@@ -82,11 +79,11 @@ function CountAnyWeight() {
           type='number'
           name='count'
           className='input-style'
-          onChange={(e) => setFull({ ...full, count: e.target.value })}
-          ref={refCount}
+          onChange={(e) => setFull({ ...full, count: parseFloat(e.target.value) })}
           inputMode='decimal'
           step='any'
           pattern='[0-9]*'
+          value={full.count}
           required
         />
         <CustomButton
@@ -115,7 +112,7 @@ function CountAnyWeight() {
         <input
           type='number'
           className='input-style'
-          onChange={(e) => setPart({ ...part, gross: e.target.value })}
+          onChange={(e) => setPart({ ...part, gross: parseFloat(e.target.value) })}
           ref={partGross}
           inputMode='decimal'
           step='any'

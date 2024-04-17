@@ -16,7 +16,7 @@ function CountByWeight() {
   const resultRef = useRef(null);
 
   const handleSelect = (e) => {
-    LabelData.map((label) => (e.target.value === label.id ? setSelect(label) : null));
+    LabelData.find((label) => (e.target.value === label.id ? setSelect(label) : null));
   };
 
   function solve(e) {

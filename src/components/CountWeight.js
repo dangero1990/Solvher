@@ -1,16 +1,21 @@
 import CountAnyWeight from './CountAnyWeight';
 import CountByWeight from './CountByWeight';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function CountWeight() {
   const [advanced, setAdvanced] = useState(false);
+  const sectionRef = useRef(null);
 
   function handleClick() {
     setAdvanced(!advanced);
   }
 
+  useEffect(() => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [advanced]);
+
   return (
-    <section id='weight-section'>
+    <section ref={sectionRef}>
       {!advanced && <CountByWeight />}
       {advanced && <CountAnyWeight />}
       <div className='absolute left-1/2 transform -translate-x-1/2 text-center'>
