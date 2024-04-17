@@ -11,10 +11,10 @@ const initialValues = {
 
 function CountAnyWeight() {
   const [full, setFull] = useState(initialValues);
+  const [select, setSelect] = useState({});
   const [store, setStore] = useState([]);
-  const [part, setPart] = useState({});
-  const [net, setNet] = useState(0);
-  const partGross = useRef(null);
+  const [part, setPart] = useState(0);
+  const net = useRef(0);
 
   function submitFull(e) {
     e.preventDefault();
@@ -24,22 +24,23 @@ function CountAnyWeight() {
 
       setStore(...newStore, [full]);
       setFull(initialValues);
+      setSelect(full);
     } else {
       setStore([...store, full]);
       setFull(initialValues);
+      setSelect(full);
     }
   }
 
   function handleSelect(e) {
-    store.map((label) => (e.target.value === label.name ? setFull(label) : null));
+    store.map((label) => (e.target.value === label.name ? setSelect(label) : null));
   }
 
   function solve(e) {
     e.preventDefault();
 
-    partGross.current.value = null;
-
-    setNet(getCount(full.count, part.gross, full.gross));
+    net.current = getCount(select.count, part, select.gross);
+    setPart(0);
   }
 
   return (
@@ -102,6 +103,7 @@ function CountAnyWeight() {
         <select
           name='rolls'
           onChange={handleSelect}
+          value={select.name}
           className='input-style'
         >
           {store.map((label) => (
@@ -112,11 +114,11 @@ function CountAnyWeight() {
         <input
           type='number'
           className='input-style'
-          onChange={(e) => setPart({ ...part, gross: parseFloat(e.target.value) })}
-          ref={partGross}
+          onChange={(e) => setPart(parseFloat(e.target.value))}
           inputMode='decimal'
           step='any'
           pattern='[0-9]*'
+          value={part}
           required
         />
         <CustomButton
@@ -127,7 +129,7 @@ function CountAnyWeight() {
       </form>
       <div className='text-center font-bold text-xl'>
         <p>Count of item</p>
-        <p>{net}</p>
+        <p>{net.current}</p>
       </div>
     </Card>
   );
