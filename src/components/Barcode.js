@@ -7,7 +7,7 @@ export default function Barcode() {
   const [barcodeText, setBarcodeText] = useState('');
 
   useEffect(() => {
-    barcodeText.trim() !== '' ? JsBarcode('#barcode', barcodeText, { width: 3 }) : JsBarcode('#barcode', 'sample', { width: 3 });
+    barcodeText.trim() !== '' ? JsBarcode('#barcode', barcodeText) : JsBarcode('#barcode', 'sample');
   }, [barcodeText]);
 
   return (
