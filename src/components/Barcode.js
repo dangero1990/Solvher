@@ -7,13 +7,13 @@ export default function Barcode() {
   const [barcodeText, setBarcodeText] = useState('');
 
   useEffect(() => {
-    barcodeText.trim() !== '' ? JsBarcode('#barcode', barcodeText) : JsBarcode('#barcode', 'sample');
+    barcodeText.trim() !== '' ? JsBarcode('#barcode', barcodeText, { width: 3 }) : JsBarcode('#barcode', 'sample', { width: 3 });
   }, [barcodeText]);
 
   return (
     <Card
       title='Barcode Generator'
-      instructions={["Type in the name of the barcode you'd like to scan into the text field below. Click clear to clear the input field"]}
+      instructions={["Type in the name of the barcode you'd like to scan into the text field below. Click clear to clear the input field", "You may need to boost your phone's brightness, and turn your phone sideways"]}
     >
       <svg
         id='barcode'
