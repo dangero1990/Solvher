@@ -1,4 +1,4 @@
-import { render, fireEvent, getByTestId } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import CountByWeight from '../components/CountByWeight';
 
 test('checks results', () => {

@@ -65,19 +65,19 @@ function CountAnyWeight() {
       >
         <h3>Refernce unit</h3>
         <i className='mb-4'>Filling this section of the form out creates a reference for you to use to count anything by weight</i>
-        <label htmlFor='name'>Name</label>
+        <label htmlFor='full-name'>Name</label>
         <input
           type='text'
-          name='name'
+          name='full-name'
           className='input-style'
           onChange={(e) => setFull({ ...full, name: e.target.value })}
           value={full.name}
           required
         />
-        <label htmlFor='gross'>Weight</label>
+        <label htmlFor='full-gross'>Weight</label>
         <input
           type='number'
-          name='gross'
+          name='full-gross'
           className='input-style'
           onChange={(e) => setFull({ ...full, gross: parseFloat(e.target.value) })}
           inputMode='decimal'
@@ -86,10 +86,10 @@ function CountAnyWeight() {
           value={full.gross}
           required
         />
-        <label htmlFor='tare'>Count</label>
+        <label htmlFor='full-count'>Count</label>
         <input
           type='number'
-          name='count'
+          name='full-count'
           className='input-style'
           onChange={(e) => setFull({ ...full, count: parseFloat(e.target.value) })}
           inputMode='decimal'
@@ -102,6 +102,7 @@ function CountAnyWeight() {
           text='submit'
           type='submit'
           name='submit-full'
+          data-testid='full-submit'
         />
       </form>
       <hr className='border-t-2 border-primary_blue' />
@@ -110,9 +111,9 @@ function CountAnyWeight() {
         onSubmit={solve}
       >
         <h3 ref={partRef}>Partial Unit</h3>
-        <label htmlFor='rolls'>Select</label>
+        <label htmlFor='part-name'>Select</label>
         <select
-          name='rolls'
+          name='part-name'
           onChange={handleSelect}
           value={select.name}
           className='input-style'
@@ -124,6 +125,7 @@ function CountAnyWeight() {
         <label htmlFor='part-gross'>Weight</label>
         <input
           type='number'
+          name='part-gross'
           className='input-style'
           onChange={(e) => setPart(parseFloat(e.target.value))}
           inputMode='decimal'
