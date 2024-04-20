@@ -46,6 +46,7 @@ function CountByWeight() {
               onChange={handleSelect}
               name='select'
               className='input-style'
+              data-testid='select'
             >
               {LabelData.map((label) => (
                 <option
