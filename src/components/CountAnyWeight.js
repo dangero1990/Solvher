@@ -41,7 +41,7 @@ function CountAnyWeight() {
   }
 
   function handleSelect(e) {
-    store.map((label) => (e.target.value === label.name ? setSelect(label) : null));
+    store.find((label) => (e.target.value === label.name ? setSelect(label) : null));
   }
 
   function solve(e) {

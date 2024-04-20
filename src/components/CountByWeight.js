@@ -63,6 +63,7 @@ function CountByWeight() {
               onChange={(e) => setPartial({ ...partial, weight: parseFloat(e.target.value) })}
               type='number'
               inputMode='decimal'
+              id='count'
               name='count'
               value={partial.weight === null ? '' : partial.weight}
               step='any'
@@ -76,6 +77,7 @@ function CountByWeight() {
             <input
               type='number'
               name='num-of-rolls'
+              id='num-of-rolls'
               onChange={(e) => setPartial({ ...partial, rolls: parseInt(e.target.value) })}
               inputMode='decimal'
               step='any'
@@ -98,7 +100,7 @@ function CountByWeight() {
         ref={resultRef}
       >
         <p className='text-primary_color'>Count on roll</p>
-        <p>{answer.current}</p>
+        <p data-testid='result'>{answer.current}</p>
       </div>
     </Card>
   );
