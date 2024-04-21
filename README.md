@@ -23,7 +23,7 @@ To run this app on your local machine run these commands in the terminal.
 - `npm install`
 - `npm start`
 
-This will install all dependencies, and start a server on localhost:3000
+This will install all dependencies, and starts a server on localhost:3000
 
 ## Contact
 
