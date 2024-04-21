@@ -4,7 +4,7 @@ The aim of Solvher is to help people with quickly and accurately performing task
 
 - Getting an estimated count of a material based on the weight of the material
 - Quickly convert alternate units of measure to kilograms
-- Generating a barcode on the fly for scanning with a scan gun.
+- Generating a barcode on the fly for scanning with a scan gun
 
 ## Technologies
 
@@ -27,7 +27,7 @@ To run this app on your local machine run these commands in the terminal.
 - `npm install`
 - `npm start`
 
-This will install all dependencies, and starts a server on localhost:3000
+This will install all dependencies, and starts a web server
 
 ## Contact
 
