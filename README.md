@@ -4,7 +4,7 @@ The aim of Solvher is to help people with quickly and accurately performing task
 
 - Getting an estimated count of a material based on the weight of the material
 - Quickly convert alternate units of measure to kilograms
-- generating a barcode on the fly for scanning with a scan gun.
+- Generating a barcode on the fly for scanning with a scan gun.
 
 ## Technologies
 
