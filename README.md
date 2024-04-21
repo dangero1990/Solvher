@@ -1,15 +1,30 @@
 # Solvher
 
-Solvher was created to assist individuals with performing daily warehouse tasks. The aim of Solvher is to help people with quickly and accurately performing tasks such as: getting an estimated count of a material based on the weight of the material, quickly convertion alternate units of measure to kilograms, and generating a barcode on the fly for scanning with a scan gun.
+The aim of Solvher is to help people with quickly and accurately performing tasks such as: getting an estimated count of a material based on the weight of the material, quickly convertion alternate units of measure to kilograms, and generating a barcode on the fly for scanning with a scan gun.
 
 ## Technologies
+
+Solvher runs on React. You must have Node.js and npm installed on your machine in order to run this application. Npm is included with a download of Node.
+
+Link to download Node:
+https://nodejs.org/en/download/current
 
 - React
 - Tailwind
 - JsBarcode
 - CLSX
 - React Router
+- Node.js
 
 ## Initializing App
 
-To initize this app run `npm run build`
+To run this app on your local machine run these commands in the terminal.
+
+- `npm install`
+- `npm start`
+
+This will install all dependencies, and start a server on localhost:3000
+
+## Contact
+
+If you'd like to contact me about this application. Please send me an email at aeubanksguitar@gmail.com
