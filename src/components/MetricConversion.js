@@ -11,6 +11,7 @@ function MetricConversion() {
   const [density, setDensity] = useState(1);
   const inputRef = useRef(null);
   const densityRef = useRef(null);
+  const netRef = useRef(null);
 
   const units = UnitData.map((unit) => <option key={unit.id}>{unit.id}</option>);
 
@@ -54,6 +55,9 @@ function MetricConversion() {
       default:
         break;
     }
+    setTimeout(() => {
+      netRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
 
   useEffect(() => {
@@ -108,7 +112,7 @@ function MetricConversion() {
       </form>
       <div className='text-center font-bold text-xl'>
         <p>Answer</p>
-        <p>{net} kg</p>
+        <p ref={netRef}>{net} kg</p>
       </div>
     </Card>
   );

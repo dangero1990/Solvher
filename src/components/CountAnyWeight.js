@@ -72,6 +72,7 @@ function CountAnyWeight() {
           className='input-style'
           onChange={(e) => setFull({ ...full, name: e.target.value })}
           value={full.name}
+          data-testid='full-name'
           required
         />
         <label htmlFor='full-gross'>Weight</label>
@@ -84,6 +85,7 @@ function CountAnyWeight() {
           step='any'
           pattern='[0-9]*'
           value={full.gross}
+          data-testid='full-gross'
           required
         />
         <label htmlFor='full-count'>Count</label>
@@ -96,6 +98,7 @@ function CountAnyWeight() {
           step='any'
           pattern='[0-9]*'
           value={full.count}
+          data-testid='full-count'
           required
         />
         <CustomButton
@@ -117,6 +120,7 @@ function CountAnyWeight() {
           onChange={handleSelect}
           value={select.name}
           className='input-style'
+          data-testid='store'
         >
           {store.map((label) => (
             <option key={label.name}>{label.name}</option>
@@ -132,6 +136,7 @@ function CountAnyWeight() {
           step='any'
           pattern='[0-9]*'
           value={part}
+          data-testid='part-gross'
           required
         />
         <CustomButton
