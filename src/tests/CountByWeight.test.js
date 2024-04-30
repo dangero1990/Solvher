@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import CountByWeight from '../components/CountByWeight';
 
-test('checks results', () => {
+test('checks results1', () => {
   const { getByLabelText, getByText, getByTestId } = render(<CountByWeight />);
   const countInput = getByLabelText('Weight of label(s)');
   const rollsInput = getByLabelText('Number of rolls');
@@ -16,7 +16,7 @@ test('checks results', () => {
   expect(resultElement.textContent).toBe(expectedResult.toLocaleString('en-US'));
 });
 
-test('checks results', () => {
+test('checks results2', () => {
   const { getByLabelText, getByText, getByTestId } = render(<CountByWeight />);
   const selectInput = getByTestId('select');
   const countInput = getByLabelText('Weight of label(s)');

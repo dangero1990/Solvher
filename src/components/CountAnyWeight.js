@@ -143,11 +143,17 @@ function CountAnyWeight() {
           text='submit'
           type='submit'
           name='submit-part'
+          data-testid='part-submit'
         />
       </form>
       <div className='text-center font-bold text-xl'>
         <p>Count of item</p>
-        <p ref={netRef}>{net.current}</p>
+        <p
+          ref={netRef}
+          data-testid='net'
+        >
+          {net.current}
+        </p>
       </div>
     </Card>
   );
